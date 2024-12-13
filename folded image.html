@@ -1,0 +1,100 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Folded Image</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Kodchasan:400,700");
+
+        *,
+        *::before,
+        *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }  
+         html {
+            font-size: 60%;
+        }
+
+      
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            perspective: 100rem;
+            background-color: rgba(255, 192, 203, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-family: "Kodchasan", sans-serif;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #cc0000;
+        }
+
+        .container {
+            display: flex;
+            width: calc(40rem * 1.5);
+            height: 40rem;
+        }
+
+        .container:hover {
+            cursor: pointer;
+        }
+
+        .container:hover .page {
+            transform: skewY(0);
+        }
+
+        .page {
+            transform-style: preserve-3d;
+            transition: transform 0.3s;
+            background-color: #eee;
+            height: 100%;
+            flex-basis: 25%;
+            box-shadow: inset 3rem 0 5rem rgba(51, 51, 51, 0.15), 0 0 1rem rgba(51, 51, 51, 0.15);
+            background-image: url(https://images.unsplash.com/photo-1538729247193-1256701f9ef5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ff548421755d700a1fdfeec098c32345&auto=format&fit=crop&w=750&q=80);
+            background-position: 0;
+            background-size: cover;
+        }
+
+        .page:nth-child(odd) {
+            transform: skewY(-15deg);
+        }
+
+        .page:nth-child(even) {
+            transform: skewY(15deg);
+        }
+
+        .page:nth-child(2) {
+            background-position: calc(1 * calc(calc(40rem * 1.5) / 4) * -1);
+        }
+
+        .page:nth-child(3) {
+            background-position: calc(2 * calc(calc(40rem * 1.5) / 4) * -1);
+        }
+
+        .page:nth-child(4) {
+            background-position: calc(3 * calc(calc(40rem * 1.5) / 4) * -1);
+        }
+    </style>
+
+
+</head>
+
+<body translate="no">
+    <h1>Hover Image!</h1>
+    <div class="container">
+        <div class="page"></div>
+        <div class="page"></div>
+        <div class="page"></div>
+        <div class="page"></div>
+    </div>
+</body>
+
+</html>
